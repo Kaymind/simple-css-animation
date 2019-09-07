@@ -1,0 +1,62 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body>div {
+	height: 300px;
+	width: 300px;
+	background-color: black;
+	margin: 100px auto;
+	position: relative;
+	transition-duration: 0.5s;
+}
+
+div>div {
+	height: 100px;
+	width: 100px;
+	background-color: red;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+body>div:hover {
+	background-color: green;
+}
+
+body>div>div {
+	transition-duration: 0.5s;
+}
+
+body>div:hover div {
+	border-radius: 100px;
+	animation-duration: 3s;
+	animation-name: ani;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes ani {
+	0% {	
+		right: 0;
+		bottom: 0;
+	}
+	25%{
+		right: 0;
+		bottom: calc(100% - 100px);
+	}
+	50%{
+		right: calc(100% - 100px);
+		bottom: calc(100% - 100px);
+	}
+	75%{
+		right: calc(100% - 100px);
+		bottom: 0;
+	}
+	100%{
+		right: 0;
+		bottom: 0;
+	}
+}
